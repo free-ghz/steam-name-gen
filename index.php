@@ -34,7 +34,7 @@
 	//var_dump($rules->{"_empty_"}->{"a"});
 	$resuls = array();
 
-	for ($i = 0; $i < 100; $i++) {
+	for ($i = 0; $i < 14; $i++) {
 		$key = "";
 		$value = "";
 		$total = "";
@@ -100,9 +100,15 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>name for steam</title>
 		<style type="text/css">
+			html, body {
+				margin: 0;
+				margin: none;
+				padding: 0;
+				padding: none;
+			}
+
 			body {
 				background-color:#<?php echo $c_wall;?>;
-				background-image: url("moan.png");
 				background-attachment: fixed;
 				color:#00ffff;
 				font-family: arial, helvetica, monospace;
@@ -110,23 +116,30 @@
 				font-weight: bold;
 				text-align:center;
 			}
+
+			.left {
+				float:left;
+			}
+			.right {
+				float:right;
+			}
+			.left, .right {
+				width:50%;
+			}
 			.header {
 				color:#<?php echo $c_header_text;?> !important;
 				background-color:#<?php echo $c_wall;?>;
 				padding:20px;
-				width:600px !important;
 			}
 			.wew {
 				color:#<?php echo $c_text;?>;
 				border-color:#<?php echo $c_border;?>;
 				border-style: ridge;
 				border-width: 4px;
-				width:640px;
-				margin:14px auto;
+				margin:10px;
 			}
 			.names {
 				font-weight:bold;
-				width:600px;
 				padding:20px;
 				margin:0 auto;
 			}
@@ -136,6 +149,19 @@
 			.names:nth-child(odd) {
 				background-color:#<?php echo $c_a;?>;
 			}
+
+			td {
+				padding: 8px;
+			}
+			.extra {
+				background-color:#ffffff40;
+			}
+
+			textarea {
+				width: 100%;
+				min-height:200px;
+			}
+
 			a:link, a:visited, a:active {
 				color:#000000;
 				background-color:#cc6ffe;
@@ -147,19 +173,55 @@
 		</style>
 	</head>
 	<body>
-		<div class="wew header" >
-			<?php echo $descript; ?>
-		</div>
-		<div class="wew">
-			<?php
-				foreach($resuls as $ka_moan) {
-					echo('<div class="names">' . htmlentities($ka_moan) . "</div>\n");
-				}
-			?>
-		</div>
-		<div class="wew" style="border-color:#00ffff;">
-			<p>nice thanks</p>
-			<p><a href="https://paypal.me/laanemae/420">donate to the writer</a></p>
-		</div>
+				<div class="wew header" >
+					<?php echo $descript; ?>
+				</div>
+			<div class="right">
+				<img src="moan.png" class="logo" alt="old vertigo was better" />
+				<div class="wew header suggestion">
+					<form action="complaints.php" method="post" accept-charset="UTF-8">
+						<table>
+							<tr>
+								<td class="extra">Do you have names to donate to the cause?</td>
+								<td>You can add them here, free of charge, one name per line. As a security measure, please type the name of the blue hedgehog in the other box.</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<textarea name="area" placeholder="olofmeister
+fatal1ty
+idiot_shrek"></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td>Other box:</td>
+								<td><input type="text" name="idiot" /></td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									~
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><input type="submit" />
+							</tr>
+						</table>
+					</form>
+				</div>
+				<div class="wew" style="border-color:#00ffff;">
+					<p>nice thanks</p>
+					<p><a href="https://paypal.me/laanemae/420">donate to the writer</a></p>
+				</div>
+			</div>
+			<div class="left">
+				<div class="wew">
+					<?php
+						foreach($resuls as $ka_moan) {
+							echo('<div class="names">' . htmlentities($ka_moan) . "</div>\n");
+						}
+					?>
+				</div>
+			</div>
+			
 	</body>
 </html>
