@@ -85,15 +85,17 @@
 	$descript = str_replace("$", "<br />", $descript);
 ?>
 <?php
-	$c_wall = "254441";
+	$c_wall = "CED0CE";
+	$header_wall = "F15025";
+	$header_contrast ="FFFFFF";
 
-	$c_border = "ff6f59";
-	$c_header_text = "ff0";
+	$c_border = "191919";
+	$c_header_text = "191919";
 
-	$c_a = "ef3054";
-	$c_b = "43aa8b";
+	$c_a = "FFFFFF";
+	$c_b = "E6E8E6";
 
-	$c_text = "fff";
+	$c_text = "191919";
 ?>
 <html>
 	<head>
@@ -110,7 +112,7 @@
 			body {
 				background-color:#<?php echo $c_wall;?>;
 				background-attachment: fixed;
-				color:#00ffff;
+				color:#191919;
 				font-family: arial, helvetica, monospace;
 				font-size:15px;
 				font-weight: bold;
@@ -126,17 +128,26 @@
 			.left, .right {
 				width:50%;
 			}
-			.header {
-				color:#<?php echo $c_header_text;?> !important;
-				background-color:#<?php echo $c_wall;?>;
-				padding:20px;
+
+			.orange {
+				background-color:#<?php echo $header_wall; ?>;
+				color:#<?php echo $header_contrast; ?>;
 			}
 			.wew {
-				color:#<?php echo $c_text;?>;
-				border-color:#<?php echo $c_border;?>;
 				border-style: ridge;
 				border-width: 4px;
 				margin:10px;
+				padding:20px;
+			}
+
+			.presentation {
+				color:#<?php echo $c_text;?>;
+				border-color:#<?php echo $c_border;?>;
+			}
+			.suggestion {
+				background-color:#<?php echo $c_border; ?>;
+				color:#<?php echo $c_wall;?>;
+				border-color:#<?php echo $c_wall;?>;
 			}
 			.names {
 				font-weight:bold;
@@ -152,9 +163,6 @@
 
 			td {
 				padding: 8px;
-			}
-			.extra {
-				background-color:#ffffff40;
 			}
 
 			textarea {
@@ -173,55 +181,61 @@
 		</style>
 	</head>
 	<body>
-				<div class="wew header" >
-					<?php echo $descript; ?>
-				</div>
-			<div class="right">
-				<img src="moan.png" class="logo" alt="old vertigo was better" />
-				<div class="wew header suggestion">
-					<form action="complaints.php" method="post" accept-charset="UTF-8">
-						<table>
-							<tr>
-								<td class="extra">Do you have names to donate to the cause?</td>
-								<td>You can add them here, free of charge, one name per line. As a security measure, please type the name of the blue hedgehog in the other box.</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<textarea name="area" placeholder="olofmeister
+		<div class="wew orange" >
+			<?php echo $descript; ?>
+		</div>
+
+		<div class="right">
+
+			<img src="moan.png" class="logo" alt="old vertigo was better" />
+
+			<div class="wew">
+				<form action="complaints.php" method="post" accept-charset="UTF-8">
+					<table>
+						<tr>
+							<td class="orange">Do you have names to donate to the cause?</td>
+							<td>You can add them here, free of charge, one name per line. As a security measure, please type the name of the blue hedgehog in the other box.</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<textarea name="area" placeholder="olofmeister
 fatal1ty
 idiot_shrek"></textarea>
-								</td>
-							</tr>
-							<tr>
-								<td>Other box:</td>
-								<td><input type="text" name="idiot" /></td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									~
-								</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td><input type="submit" />
-							</tr>
-						</table>
-					</form>
-				</div>
-				<div class="wew" style="border-color:#00ffff;">
-					<p>nice thanks</p>
-					<p><a href="https://paypal.me/laanemae/420">donate to the writer</a></p>
-				</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Other box:</td>
+							<td><input type="text" name="idiot" /></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								~
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><input type="submit" />
+						</tr>
+					</table>
+				</form>
 			</div>
-			<div class="left">
-				<div class="wew">
-					<?php
-						foreach($resuls as $ka_moan) {
-							echo('<div class="names">' . htmlentities($ka_moan) . "</div>\n");
-						}
-					?>
-				</div>
+
+			<div class="wew presentation">
+				<p>nice thanks</p>
+				<p><a href="https://paypal.me/laanemae/420">donate to the writer</a></p>
 			</div>
-			
+
+		</div>
+
+		<div class="left">
+			<div class="wew">
+				<?php
+					foreach($resuls as $ka_moan) {
+						echo('<div class="names">' . htmlentities($ka_moan) . "</div>\n");
+					}
+				?>
+			</div>
+		</div>
+
 	</body>
 </html>

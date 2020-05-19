@@ -4,11 +4,13 @@
 
     // i drink a bottle of wine
     // then i check if u r authorized
-    if (!isset($_POST)) die("idiot");
-    if (!array_key_exists("area", $_POST)) die("idiot");
-    if (!array_key_exists("idiot", $_POST)) die("idiot");
+    if (!isset($_POST)) die("idiot1");
+    if (!array_key_exists("area", $_POST)) die("idiot2");
+    if (!array_key_exists("idiot", $_POST)) die("idiot3");
 
     $password = $_POST["idiot"];
+    print_r($_SERVER);
+    print_r($_ENV);
     if (strtolower($password) !== strtolower($simsalabim)) die("idiot");
 
     $content = $_POST["area"];
