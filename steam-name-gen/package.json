@@ -1,0 +1,60 @@
+{
+  "name": "steam-name-gen",
+  "version": "1.0.0",
+  "description": "steam name generator",
+  "keywords": [
+    "loopback-application",
+    "loopback"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "lb-tsc",
+    "build:watch": "lb-tsc --watch",
+    "lint": "npm run prettier:check && npm run eslint",
+    "lint:fix": "npm run eslint:fix && npm run prettier:fix",
+    "prettier:cli": "lb-prettier \"**/*.ts\" \"**/*.js\"",
+    "prettier:check": "npm run prettier:cli -- -l",
+    "prettier:fix": "npm run prettier:cli -- --write",
+    "eslint": "lb-eslint --report-unused-disable-directives .",
+    "eslint:fix": "npm run eslint -- --fix",
+    "pretest": "npm run clean && npm run build",
+    "posttest": "npm run lint",
+    "migrate": "node ./dist/migrate",
+    "prestart": "npm run build",
+    "start": "node -r source-map-support/register .",
+    "clean": "lb-clean dist *.tsbuildinfo .eslintcache"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "",
+  "license": "",
+  "files": [
+    "README.md",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "dependencies": {
+    "@loopback/boot": "^2.3.0",
+    "@loopback/context": "^3.8.0",
+    "@loopback/core": "^2.6.0",
+    "@loopback/openapi-v3": "^3.4.0",
+    "@loopback/rest": "^5.0.0",
+    "@loopback/rest-explorer": "^2.2.1",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "@loopback/build": "^5.4.0",
+    "source-map-support": "^0.5.19",
+    "@loopback/testlab": "^3.1.4",
+    "@types/node": "^10.17.21",
+    "@loopback/eslint-config": "^7.0.0",
+    "eslint": "^7.0.0",
+    "typescript": "~3.9.2"
+  }
+}
