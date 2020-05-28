@@ -40,21 +40,21 @@
     "!*/__tests__"
   ],
   "dependencies": {
-    "@loopback/boot": "^2.3.0",
-    "@loopback/context": "^3.8.0",
-    "@loopback/core": "^2.6.0",
-    "@loopback/openapi-v3": "^3.4.0",
-    "@loopback/rest": "^5.0.0",
-    "@loopback/rest-explorer": "^2.2.1",
-    "tslib": "^1.10.0"
+    "@loopback/boot": "^2.3.2",
+    "@loopback/context": "^3.8.2",
+    "@loopback/core": "^2.7.1",
+    "@loopback/openapi-v3": "^3.4.2",
+    "@loopback/rest": "^5.1.0",
+    "@loopback/rest-explorer": "^2.2.3",
+    "tslib": "^2.0.0"
   },
   "devDependencies": {
-    "@loopback/build": "^5.4.0",
+    "@loopback/build": "^5.4.2",
     "source-map-support": "^0.5.19",
-    "@loopback/testlab": "^3.1.4",
-    "@types/node": "^10.17.21",
-    "@loopback/eslint-config": "^7.0.0",
-    "eslint": "^7.0.0",
-    "typescript": "~3.9.2"
+    "@loopback/testlab": "^3.1.6",
+    "@types/node": "^10.17.24",
+    "@loopback/eslint-config": "^8.0.0",
+    "eslint": "^7.1.0",
+    "typescript": "~3.9.3"
   }
 }
