@@ -22,8 +22,11 @@
     "eslint": "lb-eslint --report-unused-disable-directives .",
     "eslint:fix": "npm run eslint -- --fix",
     "pretest": "npm run clean && npm run build",
+    "test": "lb-mocha --allow-console-logs \"dist/__tests__\"",
     "posttest": "npm run lint",
+    "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js && npm run posttest",
     "migrate": "node ./dist/migrate",
+    "openapi-spec": "node ./dist/openapi-spec",
     "prestart": "npm run build",
     "start": "node -r source-map-support/register .",
     "clean": "lb-clean dist *.tsbuildinfo .eslintcache"
@@ -47,6 +50,7 @@
     "@loopback/repository": "^2.6.0",
     "@loopback/rest": "^5.1.0",
     "@loopback/rest-explorer": "^2.2.3",
+    "@loopback/service-proxy": "^2.3.1",
     "loopback-connector-mysql": "^5.4.3",
     "tslib": "^2.0.0"
   },

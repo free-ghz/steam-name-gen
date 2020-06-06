@@ -4,13 +4,17 @@ import {
   RestExplorerBindings,
   RestExplorerComponent,
 } from '@loopback/rest-explorer';
+import {RepositoryMixin} from '@loopback/repository';
 import {RestApplication} from '@loopback/rest';
+import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
 
 export {ApplicationConfig};
 
-export class SteamNameGen extends BootMixin(RestApplication) {
+export class SteamNameGen extends BootMixin(
+  ServiceMixin(RepositoryMixin(RestApplication)),
+) {
   constructor(options: ApplicationConfig = {}) {
     super(options);
 
