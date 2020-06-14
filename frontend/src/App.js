@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Segment } from 'semantic-ui-react'
+
+import Generator from './Generator'
+import Feeder from './Feeder'
+
+import 'semantic-ui-css/semantic.min.css'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Segment><h1>CSGO Name Generator III</h1></Segment>
+      <Generator></Generator>
+      <Feeder></Feeder>
     </div>
   );
 }
