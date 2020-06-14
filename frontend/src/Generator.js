@@ -21,6 +21,9 @@ function Generator() {
     })
   }
 
+  React.useEffect(() => {
+    generateNames();
+  }, [])
 
   return (
     <Segment>

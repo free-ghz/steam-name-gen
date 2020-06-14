@@ -45,11 +45,16 @@ no id for the receptacle since it shouldn't be persisted (i will use it for nefa
 TODO
 ====
 
- - create a frontend
+ - on frontend:
+ 	 - show too long names with an icon, perhaps too short as well (like 3 chars?)
+ 	 - some input validation (name length, quality level)
  - on server:
+     - accept longer names
+     - maybe keep start and end markers forever
      - get it to accept empty strings on models so we can throw away the \x01 fucko
      - get it to match exact on database searches witout included "un-trimmed" responses also
          - basically i search for "fatality" and it gives me also "fatality "
      - whats going on with ping controller. how do i get rid of it
      - find a better way of password protecting
+     - perhaps store all generated names, for canon checking on steroids
      
