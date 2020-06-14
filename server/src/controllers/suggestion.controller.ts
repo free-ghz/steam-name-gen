@@ -15,7 +15,7 @@ const suggestionSpec = {
       description: 'name suggestion',
       content: {
         'application/json': {
-          schema: {type: 'name[]'},
+          schema: {type: 'Name[]'},
         },
       },
     },
