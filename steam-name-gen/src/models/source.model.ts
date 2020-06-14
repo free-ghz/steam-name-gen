@@ -7,6 +7,10 @@ export class Source extends Entity {
     id: true,
     generated: false,
     required: true,
+    jsonSchema: {
+      minLength: 3,
+      maxLength: 20
+    }
   })
   text: string;
 

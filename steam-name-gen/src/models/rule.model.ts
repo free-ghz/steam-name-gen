@@ -3,16 +3,32 @@ import {Entity, model, property} from '@loopback/repository';
 @model()
 export class Rule extends Entity {
   @property({
-    type: 'string',
+    type: 'number',
     id: true,
-    generated: false,
+    generated: true,
+    required: false
+  })
+  id: number;
+
+  @property({
+    type: 'string',
     required: true,
+    jsonSchema: {
+      minLength: 0,
+      maxLength: 20
+    },
+    allowBlank: true
   })
   input: string;
 
   @property({
     type: 'string',
     required: true,
+    jsonSchema: {
+      minLength: 0,
+      maxLength: 10 // actually 1, but what is unicode anyway?
+    },
+    allowBlank: true
   })
   output: string;
 
