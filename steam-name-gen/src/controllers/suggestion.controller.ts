@@ -5,7 +5,6 @@ import {SourceRepository, RuleRepository} from '../repositories';
 import { get, ParameterLocation } from '@loopback/rest';
 import { Name, Rule } from '../models';
 
-
 const suggestionSpec = {
   parameters: [
     {name: 'amount', schema: {type: 'number'}, in: 'query' as ParameterLocation},
@@ -34,8 +33,8 @@ export class SuggestionController {
 
     @get('/suggestions', suggestionSpec)
     async getSuggestions(amount : number, quality : number) {
-      amount = amount == undefined ? 10 : amount;
-      quality = quality == undefined || quality > 20 ? 1 : quality;
+      amount = amount == undefined || amount > 10 || amount < 1 ? 5 : amount;
+      quality = quality == undefined || quality > 10 || quality < 1 ? 1 : quality;
 
       let answer = []
       for (let i = 0; i < amount; i++) {
