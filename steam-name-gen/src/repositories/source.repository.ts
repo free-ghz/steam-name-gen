@@ -13,4 +13,16 @@ export class SourceRepository extends DefaultCrudRepository<
   ) {
     super(Source, dataSource);
   }
+
+  async doesNameExist(id : string) {
+    try {
+      await this.findById(id);
+    } catch(err) {
+      if (err.code && err.code != 'ENTITY_NOT_FOUND') {
+        console.log(err)
+      }
+      return false;
+    }
+    return true;
+  }
 }
