@@ -56,7 +56,7 @@ export class SourceController {
     }
 
     // divide input text into key+value pairs, all permutations
-    let empty = '\x01' // wanted to use empty string but loopback says no. this is probably a bad idea, but whatever.
+    const empty = '\x01' // wanted to use empty string but loopback says no. this is probably a bad idea, but whatever.
     let components = []
     let text = source.text;
     let maxLookbehind = 20;

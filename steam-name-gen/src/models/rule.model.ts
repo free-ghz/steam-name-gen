@@ -16,8 +16,7 @@ export class Rule extends Entity {
     jsonSchema: {
       minLength: 0,
       maxLength: 20
-    },
-    allowBlank: true
+    }
   })
   input: string;
 
@@ -27,8 +26,7 @@ export class Rule extends Entity {
     jsonSchema: {
       minLength: 0,
       maxLength: 10 // actually 1, but what is unicode anyway?
-    },
-    allowBlank: true
+    }
   })
   output: string;
 
