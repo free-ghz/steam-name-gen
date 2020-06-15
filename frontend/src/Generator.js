@@ -13,7 +13,16 @@ function Generator() {
     fetch('http://localhost:3001/suggestions?quality=' + quality)
     .then(res => res.json())
     .then((res) => {
-        setNames(res)
+        if (res.error) {
+            setNames(
+                [
+                    { name: 'Oopsie woopsie! Die Server hat eine fucky wucky!', canon: true },
+                    { name: '' + res.error.statusCode + ' ' + res.error.message, canon: true}
+                ] 
+            )
+        } else {
+            setNames(res)
+        }
         setWaiting(false)
     }, (err) => {
         console.log("error", err)

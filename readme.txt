@@ -2,8 +2,30 @@ STEAM (CS GO) NAME GENERATOR
 ============================
 
 markov chain thing, fed with other peoples steam names.
+it's a loopback backend with react frontend (i was curious about these).
+after the fact i can say i dont vibe with LB so much but react is p. neat maybe.
 
-if this goes as planned, it's gonna be a loopback backend with react frontend (i'm curious about these).
+
+
+HOW 2 GET IT RUNNING
+====================
+
+you need these environment variables to be defined:
+	- CSGO_DATABASE_HOST		url to database
+	- CSGO_DATABASE_USER		user to login to database
+	- CSGO_DATABASE_PASSWORD	password for database
+	- CSGO_DATABASE 			name of database in database (u know what i mean)
+	- CSGO_POST_PASSWORD 		password for accepting new names
+	- CSGO_HOST 				host to run server on (not sure this is needed?)
+	- CSGO_PORT 				port to run server on
+
+then in both client and server directories: '$ npm i' (this builds the shit)
+then in root directory: '$ ./buld.sh' (this builds prod version of frontend and copies it into server public/ folder)
+then in server directory: '$ npm start' (runs it)
+
+i dont know if youre supposed to build loopback for prod as well?
+
+tip: i just put a systemd service with the npm start command to keep it running and it hasn't fucked me up yet!
 
 
 
